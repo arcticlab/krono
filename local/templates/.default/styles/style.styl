@@ -1,0 +1,4197 @@
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  -ms-{prop} args
+  -o-{prop} args
+  {prop} args
+ 
+border-radius()
+  vendor('border-radius', arguments)
+ 
+box-shadow()
+  vendor('box-shadow', arguments)
+ 
+transition()
+  vendor('transition', arguments)
+ 
+transform()
+  vendor('transform', arguments)
+ 
+transform-origin()
+  vendor('transform-origin', arguments)
+ 
+user-select()
+  vendor('user-select', arguments)
+
+filter()
+  vendor('filter', arguments)
+
+box-sizing()
+  vendor('box-sizing', arguments)
+
+animation()
+  vendor('animation', arguments)      
+
+animate(sec)
+  transition sec ease-out 
+
+contain(arg)
+  background-image url(arg)
+  background-size contain
+  background-repeat no-repeat  
+
+//colors
+redColor = #c1272d 
+redHover = #c1272d
+usualRed = #c1272d
+
+greenColor = #63a348
+greenHover = #438528
+
+pro = 'PTSansPro', sans-serif
+tre =  Trebuchet, "Trebuchet MS", Tahoma, Arial, sans-serif
+
+
+@font-face {
+  font-family: 'PTSansPro';
+  src: url('../fonts/ProBold/PTSansPro-CondBold.eot?#iefix') format('embedded-opentype'),  url('../fonts/ProBold/PTSansPro-CondBold.otf')  format('opentype'),
+       url('../fonts/ProBold/PTSansPro-CondBold.woff') format('woff'), url('../fonts/ProBold/PTSansPro-CondBold.ttf')  format('truetype'), url('../fonts/ProBold/PTSansPro-CondBold.svg#PTSansPro-CondBold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'PTSansPro';
+  src: url('../fonts/ProReg/PTSansPro-Cond.eot?#iefix') format('embedded-opentype'),  url('../fonts/ProReg/PTSansPro-Cond.otf')  format('opentype'),
+       url('../fonts/ProReg/PTSansPro-Cond.woff') format('woff'), url('../fonts/ProReg/PTSansPro-Cond.ttf')  format('truetype'), url('../fonts/ProReg/PTSansPro-Cond.svg#PTSansPro-Cond') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@charset "utf-8"
+
+input, select, textarea 
+  vertical-align middle
+  -webkit-appearance none
+  border-radius 0px
+  outline none
+
+a
+  outline none !important
+
+*
+  outline none    
+
+
+// reset
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video
+  background transparent
+  border 0
+  font-size 100%
+  margin 0
+  outline 0
+  padding 0
+  vertical-align baseline
+
+body 
+  line-height:1;
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section
+  display block
+  
+ol, ul 
+  list-style: none
+
+
+nav ul
+  list-style none
+
+blockquote, q
+  quotes none
+
+blockquote:before, blockquote:after,
+q:before, q:after
+  content ''
+  content none
+
+a
+  background transparent
+  font-size 100%
+  margin 0
+  padding 0
+  vertical-align baseline
+
+/* change colours to suit your needs */
+ins 
+    background-color #ff9
+    color #000
+    text-decoration none
+
+/* change colours to suit your needs */
+mark
+  background-color #ff9
+  color #000
+  font-style italic
+  font-weight bold
+
+del
+  text-decoration line-through
+
+abbr[title], dfn[title]
+  border-bottom 1px dotted
+  cursor help
+
+table
+  border-collapse collapse
+  border-spacing 0
+
+/* change border colour to suit your needs */
+hr
+  border 0
+  border-top 1px solid #ccc
+  display block
+  height 1px
+  margin 1em 0
+  padding 0
+
+input, select 
+  vertical-align middle
+  -webkit-appearance none
+  border-radius 0px
+
+a
+  outline 0 !important;  
+
+img
+  max-width 100%
+  
+// end reset
+
+.container
+  width 100%
+  max-width 954px;
+  padding 0 20px
+  box-sizing border-box
+  position relative
+  &.white-bg
+    background #fff
+    
+
+.sitewrap
+  font-family 'PT Sans', sans-serif
+  letter-spacing 0.025em   
+  overflow hidden
+  position relative 
+  min-width: 320px
+  background #ececec  
+  
+.header
+  height 160px
+  background url('../images/header-bg.jpg') center
+  box-sizing border-box
+  padding 13px 0  
+  @media(max-width:830px)
+    height 70px 
+  @media(max-width:500px)
+    height 40px 
+    padding 8px 0 
+  
+  .header-menu
+    text-align justify
+    text-align-last justify
+    line-height 0px
+    &:after
+      content: "";
+      display: inline-block;
+      overflow: hidden;
+      width: 100%;
+      visibility: hidden;
+      height: 0px;
+      
+  
+  .logo
+    width 82px
+    height 131px
+    display inline-block
+    contain('../images/logo.png')
+    position relative
+    z-index 2
+    @media(max-width:830px)
+      width 236px
+      height 45px
+      contain('../images/logo-sm.png')
+      
+    
+    @media(max-width:500px)
+      width 125px
+      height 24px
+      contain('../images/logo-xs.png')
+
+        
+    
+  .header-menu__item
+    display inline-block
+    padding 0 5px
+    text-align center
+    text-align-last center
+    line-height 1em
+    @media(max-width:830px)
+      display none
+    
+    a
+      font-family: 'PTSansPro', sans-serif;
+      font-size 24px
+      color #fff
+      margin-bottom 5px
+      text-decoration none
+      display inline-block
+    span
+      display block
+      font-size 10px
+      color #fff
+  
+  .header-links
+    position absolute
+    right 10%
+    top 0
+    z-index 2
+    @media(max-width:900px)
+      right 15px
+    @media(max-width:830px)
+      right 40px 
+      top 10px
+    @media(max-width:500px)
+      display none   
+    a
+      margin 0 5px
+      display inline-block
+      vertical-align middle
+    .zapoved
+      width 69px
+      height 28px
+      contain('../images/zapoved-logo.png')    
+    .mnr  
+      width 93px
+      height 23px
+      contain('../images/mnr-logo.png')
+          
+  
+  .bear
+    width 409px
+    height 88px
+    contain('../images/bear.png')
+    position absolute
+    top -13px
+    left: 20%;
+    z-index 1
+    @media(max-width:830px)
+      display none
+  
+  .fish
+    width 100px
+    height 39px
+    contain('../images/fish.png')
+    position absolute
+    right:  5%;
+    top: 30%;
+    z-index 1
+    @media(max-width:830px)
+      display none
+  .mm-ico
+    width 18px
+    height 18px
+    position absolute
+    right 15px
+    top 15px
+    contain('../images/mm-ico.png')
+    display none
+    cursor pointer
+    &.open
+      contain('../images/mm-cross.png')
+    @media(max-width:830px)
+      display block  
+    
+    @media(max-width:500px)
+      top 6px  
+    
+.menu-wrap
+  padding 10px 0
+  background: #fff;
+  @media(max-width:830px)
+    display none
+  .menu
+    text-align: justify;
+    line-height: 0;
+    text-justify: newspaper;
+    zoom: 1;
+    text-align-last: justify;
+    &:after 
+      content: "";
+      display: inline-block;
+      overflow: hidden;
+      width: 100%;
+      visibility: hidden;
+      height: 0px;
+  
+  .menu__item
+    display inline-block
+    vertical-align middle
+    color #000000
+    font-size 14px
+    a
+      color #000000  
+      text-transform uppercase
+      line-height 1em
+      display inline-block
+      position relative
+      text-decoration none
+      z-index 2
+      &:hover
+        color #c1272d
+        
+    span
+      position relative
+      top -1px  
+      line-height 1em
+
+.mm-wrap
+  .container
+    position relative
+  
+  .mm-block
+    position absolute
+    left 0
+    top 0
+    width 100%
+    box-sizing border-box
+    font-size 0px
+    z-index 9999
+    letter-spacing 0px
+    display none
+    @media(min-width:830px)
+      display none !important
+    .mm-top
+    .mm-bottom
+      padding 15px
+      box-sizing border-box
+      display inline-block
+      width 50%
+      vertical-align top
+      @media(max-width:660px)
+        width 100%
+      .mm-header
+        width 116px
+        display inline-block
+        font-family pro
+        font-weight bold
+        font-size 18px
+        text-transform uppercase
+      
+      .mm-list
+        width 170px
+        display inline-block
+        vertical-align top
+        .mm-item
+          font-size 14px
+          text-decoration none
+          position relative
+          line-height 13px
+          margin-bottom 10px
+          display block
+          padding-right 15px
+          &:after
+            content ''
+            position absolute
+            background-image url('../images/menu-arrows.png')
+            width 9px
+            height 13px
+            right 0px
+            top 50%
+            margin-top -6px
+    
+    .mm-bottom
+      background #c1272d
+      color #fff
+      .mm-item
+        color #fff
+        
+    
+    .mm-top
+      background #fff
+      color #000
+      .mm-item
+        color #000
+        &:after
+          background-position -9px 0
+           
+      
+            
+          
+            
+          
+       
+
+.main-slider__wrap
+  .main-slider__item  
+    min-height 440px
+    max-height 500px
+    overflow hidden
+    position relative
+    .slide-content
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+      box-sizing border-box
+      padding-top 30px
+      &.shadow
+        background: -moz-linear-gradient(top, rgba(122,122,122,0.65) 0%, rgba(122,122,122,0) 100%);
+        background: -webkit-linear-gradient(top, rgba(122,122,122,0.65) 0%,rgba(122,122,122,0) 100%);
+        background: linear-gradient(to bottom, rgba(122,122,122,0.65) 0%,rgba(122,122,122,0) 100%);
+        
+        
+      .slide-caption
+        font-family: 'PTSansPro', sans-serif;
+        font-size 92px
+        color #fff
+        margin-bottom 20px
+        @media(max-width:600px)
+          font-size 48px
+      
+      .slide-description
+        font-size 20px
+        color #fff
+        font-weight bold
+        font-style italic
+        line-height 1.3em
+        max-width 500px
+          
+        
+    img
+      display block
+      height 100%  
+      width auto
+      max-width none
+  .slick-dots
+    padding 0
+    position absolute
+    bottom 220px
+    pointer-events none   
+    button
+      height 10px
+      width 10px
+      box-sizing border-box
+      border 1px solid #fff
+      background #fff
+      pointer-events auto
+      &:hover
+      &:focus  
+        background #fff
+    
+    .slick-active
+      button
+        background #c1272d  
+
+.main-news__wrap
+  position relative
+  margin-top -200px
+  .news-slider
+    margin 0 -10px
+  .news-slide
+    font-size 0px
+    padding 0 10px
+    .news-item
+      border 1px solid #fff 
+      background #fff    
+      margin-bottom 20px
+      box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.5);
+      animate(0.2s)
+      &:hover
+        border-color usualRed
+    .news-item__img
+      display block  
+    .news-item__content
+      padding 15px  
+      position relative
+      
+      .news-item___social
+        display inline-block
+        top 15px
+        right 13px
+        position absolute
+        a
+          display inline-block
+          width 14px
+          height 15px
+          background-image url('../images/icons-sprite.png')
+          margin 0 2px
+          &.vk
+            background-position -90px 0
+          &.fb
+            background-position -104px 0
+          &.twi
+            background-position -118px 0    
+            
+
+      .date
+        font-size 10px
+        color #7f7f7f
+        margin-bottom 7px
+      .caption  
+        font-family: 'PTSansPro', sans-serif;
+        font-size 20px
+        color #000
+        text-transform none
+        margin-bottom 10px
+        text-decoration none
+        display inline-block
+        width 138px
+        &:hover
+          color #c1272d
+      .descr
+        font-size 12px
+        color #7f7f7f  
+        height 60px
+        span
+          color #c1272d
+    
+  .slick-prev
+  .slick-next
+    width 20px
+    height 80px
+    background-color #c1272d 
+    &:before
+      content ''
+      display block
+      width 15px
+      height 22px
+      position absolute
+      top 50%
+      left 50%
+      margin-top -11px
+      margin-left -8px
+  
+  .slick-prev
+    left -10px 
+    &:before
+      background url('../images/sa-left.png')
+
+  
+  .slick-next
+    right -12px      
+    &:before
+      background url('../images/sa-right.png')  
+   
+.first-main
+  .first-block
+    border 1px solid #fff
+    height 292px
+    background #fff
+    overflow hidden
+    margin-bottom 20px
+    position relative
+    display block
+    text-decoration none
+    animate(0.2s)
+    &:hover
+      border-color usualRed
+
+  
+  .first-map
+    @media(max-width:849px)
+      display none
+    .map-img
+      text-align center
+      overflow hidden
+    .map-header
+      height 29px
+      line-height 29px
+      background url('../images/map-bg.jpg')
+      font-size 10px
+      color #fff
+      text-transform uppercase  
+      padding 0 14px
+      background-size cover
+      position relative
+      z-index 2
+    
+    .map-img-wrap
+      display inline-block
+      position relative
+      span
+        position absolute
+        font-family tre
+        font-size 11px
+        color #fff
+        z-index 3
+        cursor: pointer;
+
+    img
+      position relative
+      top -10px
+      z-index 1  
+      max-width none
+    
+    .map-descr
+      position absolute
+      width 100%
+      box-sizing border-box
+      padding 15px 10px  
+      left 0
+      top 29px
+      background rgba(0,0,0,0.5)
+      z-index 5
+      display none
+      pointer-events none
+      .mapd-header
+        font-family pro
+        font-size 20px
+        color #fff
+        margin-bottom 10px
+      
+      ul
+        font-size 11px
+        font-family tre
+        color #fff 
+        li
+          margin-bottom 3px 
+        
+      
+  
+  .first-info
+    animate(0.2s)
+    .info-img
+      height 146px
+      overflow hidden
+      background-size cover
+      img
+        display block      
+    .info-content
+      padding 15px
+      .section
+        font-size 10px
+        color #c1272d
+        margin-bottom 8px
+        text-transform uppercase
+      .caption  
+        font-family: 'PTSansPro', sans-serif;
+        font-size 20px
+        color #000
+        text-transform none
+        margin-bottom 10px
+        text-decoration none
+        display inline-block
+      .descr
+        font-size 12px
+        color #7f7f7f  
+        span
+          color #c1272d
+    &:hover
+      border-color usualRed
+      .caption
+        color #c1272d      
+      
+  .first-tour
+    .info-img
+      height 146px
+      overflow hidden
+      background-size cover
+      img
+        display block   
+    .info-content
+      background url('../images/tour-bg.jpg')
+      padding 15px
+      .section
+        font-size 10px
+        color #fff
+        margin-bottom 10px
+        text-transform uppercase
+      
+      .tour-list
+        li
+          font-size 15px
+          color #ffffff
+          margin-bottom 10px
+          &:before
+            content "» "
+          a
+            color #ffffff
+
+.footer
+  background #1d4360
+  padding 20px 0 0 
+  color #fff
+  font-size 10px
+  line-height 1.2em
+  position relative
+  z-index 1
+    
+  .copy
+    margin-bottom 10px
+    line-height 1.2em
+    a
+      color #fff
+      text-decoration none
+    
+    .footer-phone
+      display inline-block
+      font-size 14px
+  
+  .partner-logo
+    margin 0 -5px 20px
+    .unesco-logo
+      display inline-block
+      margin 0 5px
+      width 26px
+      height 25px
+      background url('../images/unesco-logo.png') no-repeat 
+    
+    .mab-logo
+      display inline-block
+      margin 0 3px
+      width 25px
+      height 25px
+      background url('../images/mab-logo.png') no-repeat 
+  
+  .footer-social
+    position relative
+    margin-bottom 20px
+    span
+      font-size 10px
+      text-transform uppercase
+      
+    .footer-social__links
+      font-size 0px
+      margin 0 -3px  
+      position absolute
+      right 0
+      top -3px
+      @media(max-width:730px) and (min-width:600px)
+        position static
+        
+    a
+      width 15px
+      height 15px
+      display inline-block
+      background url('../images/icons-sprite.png')
+      margin 0 3px
+      
+      &.vk
+        background-position 0 0
+      
+      &.fb
+        background-position -15px 0
+      
+      &.tw
+        background-position -30px 0
+      
+      &.lj
+        background-position -45px 0      
+  
+  .footer-mail
+  .footer-forum
+    margin-bottom 10px
+    padding-left 22px
+    position relative
+    a
+      color #fff
+      text-decoration none
+    .ico
+      display inline-block
+      width 15px
+      height 15px
+      background url('../images/icons-sprite.png')
+      position absolute
+      left 0
+      top -3px
+  
+  .footer-mail
+    .ico
+      background-position -60px 0
+  
+  .footer-forum
+    .ico
+      background-position -75px 0    
+
+.second-main
+  .second-block
+    box-sizing border-box
+    background #fff
+    padding  10px   
+    height 137px 
+    margin-bottom 20px
+    display block
+    text-decoration none 
+    border 1px solid #fff
+    animate(0.2s)
+    &:hover
+      border-color usualRed
+    .section
+      font-size 10px
+      color #fff
+      margin-bottom 2px
+      text-transform uppercase
+      display inline-block
+      line-height 1em
+        
+    &.stories
+      background-size cover
+      background-position center center
+    
+    &.weather
+      background-color #fff !important
+      text-align center
+      .section
+        color #c1272d 
+        text-align left
+        display block
+      
+      .ww-content
+        font-size 0px
+        padding-top 10px
+        white-space nowrap
+        display inline-block
+        text-align left
+        .ww-ico
+          width 32px
+          height 34px
+          display inline-block
+          margin-right 5px
+          background-position center center
+          vertical-align middle
+          background-repeat no-repeat
+          background-size contain
+          
+          &.sun
+            background-image url('../images/sun.png')
+          &.rain  
+            background-image url('../images/rain.png')
+          &.cloudy
+            background-image url('../images/cloudy.png')
+          &.snow
+            background-image url('../images/snow.png')
+          &.lrain
+            background-image url('../images/lrain.png')
+          &.lcloudy
+            background-image url('../images/lcloudy.png')      
+        
+        .ww-degree
+          font-family tre
+          font-size 28px
+          color #050505
+          display inline-block
+          vertical-align middle
+          
+          sup
+            font-size 0.5em
+        
+        .ww-descr   
+          padding-top 7px
+          font-size 12px
+          color #7f7f7f
+          span
+            display block 
+            
+            
+        
+             
+    
+    &.main-route
+      background-size cover 
+      position relative 
+      
+      .route-content
+        position absolute
+        left 0
+        top 0
+        box-sizing border-box
+        width 100% 
+        padding 10px
+        background rgba(0,0,0,0.5)
+        
+        .section
+          color #fff
+        
+        .caption
+          font-family: 'PTSansPro', sans-serif;
+          display block
+          color #fff
+          margin-bottom 7px
+          font-size 19px
+          text-decoration none
+          a
+            color #fff
+        
+        .content-item
+          font-size 12px
+          color #fff
+          text-decoration none
+          a
+            color #fff
+          
+          &:before
+            content "» "
+    
+    &.main-vac
+      position relative
+      .vac-img
+        position absolute
+        left 0
+        top 0
+        width 50%
+        height 100%
+        background-size cover
+      
+      .vac-content
+        margin-left 50%
+        padding-left 10px
+        box-sizing border-box  
+        
+        .section
+          color #c1272d
+          margin-bottom 15px
+          
+        .descr  
+          font-size 12px
+          color #7f7f7f 
+          margin-bottom 2px
+        
+        .content-item
+          font-size 12px
+          color #c1272d
+          a
+            color #c1272d
+            text-decoration none
+          
+          &:before
+            content "» " 
+    &.video-block
+    &.gallery-block
+      background-size cover
+      position relative
+      .gal-content
+        left 0
+        position absolute
+        display block
+        width 100%
+        top 50%
+        transform translateY(-50%)
+        .ico
+          height 65px
+          margin-bottom 10px
+          background-position center center
+          background-repeat no-repeat
+        
+        .text
+          font-family: 'PTSansPro', sans-serif;
+          color #fff
+          font-size 24px
+          text-transform uppercase
+          text-align center
+    &.video-block
+      .ico
+        background-image url('../images/video-ico.png')
+    &.gallery-block
+      .ico
+        background-image url('../images/photo-ico.png')    
+              
+            
+          
+          
+    
+    &.webcam-block
+      background-size cover
+      position relative
+      .ico
+        background-image url('../images/webcam-ico.png')  
+      .gal-content
+        left 0
+        position absolute
+        display block
+        width 50%
+        top 50%
+        transform translateY(-50%)
+        .ico
+          height 65px
+          margin-bottom 10px
+          background-position center center
+          background-repeat no-repeat
+        
+        .text
+          font-family: 'PTSansPro', sans-serif;
+          color #fff
+          font-size 24px
+          text-transform uppercase
+          text-align center   
+          
+      .links-content
+        position absolute
+        right 0
+        top 0
+        width 50%
+        height 100%
+        background rgba(0,0,0,0.5)   
+        
+        .webcam-list
+          position absolute
+          width 100%
+          box-sizing border-box
+          padding 10px
+          top 50%
+          transform translateY(-50%)
+          
+          .webcam-item
+            padding 10px 0
+            a
+              font-size 15px
+              color #000
+              color #fff
+              display inline-block
+              text-decoration none
+              position relative
+              margin-left 10px
+              &:hover
+                text-decoration underline
+              &:before
+                content '» '
+                position absolute
+                left -12px
+                top 0
+                display inline-block
+                
+a.second-block
+  animate(0.2s)
+  &:hover
+    border 1px solid #c1272d
+
+
+.main-block
+  padding 40px 0 20px
+  position relative
+  @media(max-width:950px)
+    padding 0px
+    
+  
+  
+  .main-block__bg
+    width 100%
+    height 500px
+    background-size cover
+    position absolute
+    top 0
+    left 0
+    z-index 0
+    @media(max-width:950px)
+      display none
+  
+  .container
+    position relative
+    z-index 2  
+    padding-top 20px
+  
+
+.side-menu
+  font-family: 'PTSansPro', sans-serif;
+  @media(max-width:849px)
+    background #ececec
+    margin -20px -20px 10px
+    padding 15px
+  
+  .side-menu__header
+    font-size 38px
+    color #c1272d
+    line-height 1.2em
+    @media(max-width:849px)
+      font-size 30px
+    @media(max-width:500px)
+      font-size 18px  
+  
+  .side-menu__list
+    padding 10px 0
+    margin-bottom 10px
+    @media(max-width:849px)
+      margin 0 -10px
+    a
+      display block 
+      border-bottom 1px solid #ececec
+      background #fff
+      padding 15px 10px 
+      animate(0.2s)
+      font-size 24px
+      color #000
+      text-decoration none
+      &:hover
+        background #ececec
+      
+      span:before
+        content: '» '
+        color #c1272d
+      @media(max-width:849px)
+        display inline-block
+        border-bottom 0px
+        font-family 'PT Sans', sans-serif
+        color #000
+        font-size 18px
+        background transparent
+        // span:before
+        //   display none
+      @media(max-width:500px)
+        font-size 14px
+            
+          
+
+.side-img
+  padding 20px 0
+  img
+    max-width 100%
+    display block
+    margin-bottom 20px
+
+.side-faces
+  font-family pro
+  padding 40px 0
+  .side-faces__caption
+    font-size 24px
+    color redColor
+    margin-bottom 20px
+  
+  .faces__item
+    margin 0 -5px 20px
+    font-size 0px
+    letter-spacing 0px
+    vertical-align middle
+    .faces-img
+      width 50%
+      max-width 140px
+      padding 0 5px
+      display inline-block
+      box-sizing border-box
+      vertical-align middle
+      
+      .faces-img__inner
+        height 137px
+        background-size cover
+    
+    .faces-caption
+      vertical-align middle
+      width 50%
+      display inline-block
+      padding 0 5px
+      box-sizing border-box
+      .faces-caption__inner
+        a
+          font-size 24px
+          color #000000
+          text-decoration none
+          animate(0.2s)
+          &:hover
+            color redColor
+
+.side-blocks
+  .side-block__item
+    background #fff
+    display block
+    text-decoration none
+    border 1px solid #ececec
+    padding 1px 
+    margin-bottom 20px
+    animate(0.2s)
+    .sb-item__img  
+      height 150px
+      background-size cover
+      background-position center center
+      &.big
+        height 194px
+    .sb-item__content
+      padding 10px
+      .section
+        margin-bottom 10px
+        font-size: 10px;
+        color: #c1272d;
+        margin-bottom: 10px;
+        font-family tre
+      .caption
+        font-family 'PTSansPro', sans-serif
+        font-size 20px
+        color #010101
+        margin-bottom 10px
+        animate(0.2s)
+      
+      .descr
+        font-size 11px
+        color #7f7f7f
+        span
+          color redColor
+    &:hover
+      border 1px solid redHover
+      .caption
+        color redHover 
+            
+          
+          
+      
+      
+        
+    
+
+    
+    
+    
+
+.content-wrap
+  &>img
+    display block
+    margin-bottom 20px
+  .block-image
+    margin-bottom 20px 
+    img
+      display block
+      width 100%
+  
+  h1
+    font-family: 'PTSansPro', sans-serif;
+    font-size 48px
+    color #000
+    margin-bottom 10px
+    font-weight 400 
+    @media(max-width:600px)
+      font-size 36px 
+  
+  h2
+    font-size 32px
+    font-family pro
+    color #7f7f7f
+    font-weight normal
+    margin-bottom 30px
+
+    
+      
+.content
+  font-size 14px
+  color #000
+  font-family tre
+  
+  h1
+    font-family: 'PTSansPro', sans-serif;
+    font-size 48px
+    color #000
+    margin-bottom 20px
+    font-weight 400  
+  
+  h2
+    font-size 20px
+    font-family pro
+    color usualRed
+    font-weight normal
+    margin-bottom 20px
+    text-transform uppercase
+  
+  &.pb
+    padding-bottom 40px
+  .route-note
+    font-size 14px
+    color usualRed
+    margin-bottom 10px
+    text-transform uppercase
+    
+  p
+    margin-bottom 20px
+    line-height 1.3em
+    
+  a
+    color #c1272d
+    text-decoration none
+    &:hover
+      text-decoration underline
+  
+  span
+    color #7f7f7f  
+    font-size 18px 
+  
+  i
+  em
+    font-style italic
+  
+  b
+  strong
+    font-weight bold
+  
+  q
+  blockquote
+    display block
+    font-family pro
+    font-size 18px
+    text-transform uppercase
+    color redColor
+    padding 10px 10px 10px 20px 
+    border-left 1px solid redColor   
+    margin-bottom 20px     
+  
+  h3
+    font-family pro
+    font-weight normal
+    color usualRed
+    font-size 20px
+    text-transform uppercase
+    margin-bottom 20px
+  
+  h4
+    font-size 14px
+    text-transform uppercase
+    color usualRed
+    margin 0 0 20px
+    font-weight normal  
+  
+  ul
+    padding-bottom 20px
+    li
+      margin-bottom 10px
+      padding-left 15px
+      position relative
+      &:before
+        content '• '
+        color usualRed  
+        position absolute
+        left 0
+        top 0
+
+  
+.territory-wrap
+  padding 0 0 20px
+  
+  // .territory-wrap__inner
+  .territory-link
+    display block
+    border 1px solid #fff
+    box-sizing border-box
+    box-shadow: 0px 0px 0px 1px rgba(236,236,236,1); 
+    background-size cover  
+    height 292px 
+    position relative
+    margin-bottom 20px
+    animate(0.2s)
+    &:hover
+      box-shadow: 0px 0px 0px 1px usualRed; 
+  
+  .territory-date
+    position absolute
+    left 10px
+    top 10px
+    font-family tre
+    font-size 10px
+    color #fff
+
+  .territory-link__content
+    position absolute
+    width 100%
+    left 0
+    min-height 60%
+    bottom 10px
+    color #fff
+    box-sizing border-box
+    padding 0 10px
+    @media(max-width:600px)
+      padding 0 10px
+ 
+  
+  .territory-link__caption
+    font-size 38px
+    font-family: 'PTSansPro', sans-serif;
+    margin-bottom 10px
+  
+  .territory-link__desc
+    font-size 14px
+    line-height 1.2em
+  
+  .territory-list
+    .territory-list__header
+      font-size 16px
+      font-weight bold
+      margin-bottom 20px
+      color #c1272d
+    
+    .territory-list__item
+      padding-left 13px
+      position relative
+      font-size  14px
+      margin-bottom 10px
+      &:before
+        content ''
+        width 4px
+        height 4px
+        display block
+        background #c1272d
+        position absolute
+        left 0
+        top 5px
+        border-radius 50%
+      a
+        color #040404
+        animate(0.2s)
+        text-decoration none
+        &:hover 
+          color #c1272d 
+      
+.sight-wrap
+  font-size 0px
+  letter-spacing 0px
+  margin 0 -10px
+  
+  .sight-item
+    display inline-block
+    vertical-align top
+    padding 0 10px
+    width 33.3333%
+    box-sizing border-box
+    margin-bottom 20px
+    @media(max-width:800px)
+      width 50%
+    
+    @media(max-width:550px)
+      width 100%  
+    
+    .sight-item__inner
+      background #fff
+      display block
+      text-decoration none
+      border 1px solid #ececec
+      padding 1px 
+      animate(0.2s)
+      &:hover
+        border 1px solid redHover
+    
+    .sight-item__img
+      height 147px
+      background-size cover
+      background-position center center  
+    .sight-item__content
+      padding 10px
+      .caption
+        font-family 'PTSansPro', sans-serif
+        font-size 20px
+        color #010101
+        margin-bottom 10px
+        height 40px
+      
+      .descr
+        font-size 11px
+        color #7f7f7f
+        height 84px
+        span
+          color redColor
+        
+.multimedia-wrap
+  font-size 0px
+  letter-spacing 0px
+  margin 0 -10px
+  text-align center
+  
+  .multimedia-item  
+    display inline-block
+    padding 0 10px
+    width 33.3333%
+    box-sizing border-box 
+    margin-bottom 20px
+    @media(max-width:800px)
+      width 50%    
+    @media(max-width:550px)
+      width 100%  
+    
+    .multimedia-item__inner
+      height 290px 
+      border 1px solid #ececec
+      padding 1px
+      background-size cover
+      display block
+      position relative
+      box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,1);
+      animate(0.2s)
+      &:hover
+        border 1px solid redHover
+      
+      
+      .mt-content
+        left 0
+        position absolute
+        display block
+        width 100%
+        bottom 10%
+        .ico
+          height 65px
+          margin-bottom 10px
+          background-position center center
+          background-repeat no-repeat
+        
+        .text
+          font-family: 'PTSansPro', sans-serif;
+          color #fff
+          font-size 24px
+          text-transform uppercase
+          text-align center
+        &.video-block
+          .ico
+            background-image url('../images/video-ico.png')
+        &.gallery-block
+          .ico
+            background-image url('../images/photo-ico.png')
+        &.webcam-block    
+          .ico
+            background-image url('../images/webcam-ico.png')
+            
+
+.gallery-wrap
+  h1
+    font-family 'PTSansPro', sans-serif
+    font-size: 48px;
+    color: #c1272d;
+    line-height: 1.2em;
+    font-weight 500
+    margin 0 0 10px
+    @media(max-width:600px)
+      font-size 36px
+  
+  .gallery-list
+    margin 0 -10px    
+    font-size 0px
+    letter-spacing 0px
+    .gallery-item
+      width 33.333%
+      display inline-block
+      vertical-align top
+      padding 0 10px
+      margin-bottom 20px
+      @media(max-width:800px)
+        width 50%    
+      @media(max-width:550px)
+        width 100%  
+      
+      
+    .gallery-item__inner
+      display block
+      text-decoration none
+      border 1px solid #ececec
+      padding 1px
+      animate(0.2s)
+      height 280px
+      
+      &:hover
+        border-color redHover
+      
+      .gallery-item__img
+        height 190px
+        background-size cover
+        background-position center center
+        &.inner
+          height 276px
+      
+      .gallery-item__content
+        padding 15px
+        position relative
+        
+        .gi__count
+        .gi__author  
+          font-size 10px
+          color #c1272d
+          margin-bottom 10px
+          font-family tre
+        
+        .gi__author
+          padding-right 50px  
+        
+        .gi__views
+          position absolute
+          top 15px
+          right 15px
+          padding-left 30px
+          font-size 10px
+          font-family tre
+          color #ececec
+          &:before
+            content ''
+            width 23px
+            height 13px
+            display inline-block
+            background url('../images/views-ico.png')
+            position: absolute;
+            left 0
+            top 50%
+            margin-top -7px
+            
+            
+        
+        .gi__caption
+          font-family pro
+          font-size 20px
+          color #010101
+          height 46px
+          line-height 1.1em
+          
+    .wallpaper-item
+      width 33.333%
+      display inline-block
+      vertical-align top
+      padding 0 10px
+      margin-bottom 20px
+      @media(max-width:800px)
+        width 50%    
+      @media(max-width:550px)
+        width 100%  
+      
+      .wallpaper-item__inner
+        display block
+        text-decoration none
+        height 280px
+        padding 1px
+        border 1px solid transparent
+        position relative
+        animate(0.2s)
+        &:hover
+          border 1px solid redHover
+        
+        .wallpaper-content
+          position absolute
+          width 100%
+          top 50%
+          transform translateY(-50%)  
+        .wallpaper-img
+          text-align center
+        .wallpaper-caption
+          font-family pro
+          font-size 40px
+          text-align center
+          color #000
+         
+          span
+            position relative
+            display inline-block
+            &:before
+              content '» '
+              color #c1272d
+              position absolute
+              top 0
+              left -20px
+
+.video-wrap
+  h1
+    font-family 'PTSansPro', sans-serif
+    font-size: 48px;
+    color: #c1272d;
+    line-height: 1.2em;
+    font-weight 500
+    margin 0 0 10px
+    @media(max-width:600px)
+      font-size 36px
+  
+  h2
+    font-family: 'PTSansPro', sans-serif;
+    font-size 48px
+    color #000
+    margin-bottom 10px
+    font-weight 400  
+    @media(max-width:600px)
+      font-size 36px  
+  
+  .video-container
+    height 517px
+    margin-bottom 20px
+    @media(max-width:700px)
+      height 400px
+    iframe
+      width 100% !important
+      height 100% !important
+  
+  .video-content    
+    display block
+
+.side-menu.filter
+  .side-menu__header
+    font-size 24px
+    background #ececec
+    padding 10px
+  
+  .side-menu__list
+    a
+      border-bottom 0px
+      padding 5px 0
+      display inline-block
+      &:hover
+        background transparent
+        color #c1272d
+
+
+.video-list      
+  margin 0 -10px    
+  font-size 0px
+  letter-spacing 0px
+  .gallery-item
+    width 33.333%
+    display inline-block
+    vertical-align top
+    padding 0 10px
+    margin-bottom 20px
+    @media(max-width:800px)
+      width 50%    
+    @media(max-width:550px)
+      width 100%  
+  
+  &.content-video-list
+    .gallery-item
+      width 50%
+      @media(max-width:550px)
+        width 100%
+        
+    
+  .gallery-item__inner
+    display block
+    text-decoration none
+    border 1px solid #ececec
+    padding 1px
+    animate(0.2s)
+    height 307px
+    
+    &:hover
+      border-color redHover
+    
+    .gallery-item__img
+      height 190px
+      background-size cover
+    
+    .gallery-item__content
+      padding 15px
+      position relative
+      
+      .gi__count
+      .gi__author  
+        font-size 10px
+        color #c1272d
+        margin-bottom 10px
+        font-family tre
+        &.gi__bottom
+          margin-bottom 0
+          margin-top 10px
+      
+      .gi__author
+        padding-right 50px  
+      
+      .gi__views
+        position absolute
+        top 15px
+        right 15px
+        padding-left 30px
+        font-size 10px
+        font-family tre
+        color #ececec
+        &:before
+          content ''
+          width 23px
+          height 13px
+          display inline-block
+          background url('../images/views-ico.png')
+          position: absolute;
+          left 0
+          top 50%
+          margin-top -7px
+          
+          
+      
+      .gi__caption
+        font-family pro
+        font-size 20px
+        color #010101
+        height 46px
+        line-height 1.1em        
+
+.video-info
+.news-info
+  margin 0 -5px
+  text-align justify
+  text-align-last justify
+  line-height 0px
+  &:after
+    content: "";
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    visibility: hidden;
+    height: 0px;
+  
+  .vi__item
+    display inline-block
+    font-size 10px
+    font-family tre 
+    margin 0 5px 20px
+    color #c1272d
+    vertical-align middle
+    text-align left
+    text-align-last left
+    line-height 1.2em
+    
+  .vi__views 
+    position relative
+    padding-left 30px
+    &:before
+      content ''
+      width 23px
+      height 13px
+      display inline-block
+      background url('../images/views-ico-red.png')
+      position: absolute;
+      left 0
+      top 50%
+      margin-top -7px     
+  .vi__social
+    margin 0 0 20px
+    a
+      display inline-block
+      width 14px
+      height 15px
+      background-image url('../images/icons-sprite.png')
+      margin 0 2px
+      position relative
+      z-index 20
+      &.vk
+        background-position -90px 0
+      &.fb
+        background-position -104px 0
+      &.twi
+        background-position -118px 0    
+      &.lj
+        background-position -132px 0   
+        
+
+.map-wrap
+  height 500px  
+  @media(max-width:600px)
+    height 300px
+    padding 0 10px
+
+.contacts-info
+  font-family tre
+  font-size 17px
+  color #a6a6a6
+  line-height 1.2em
+  a
+    color usualRed
+    text-decoration none
+
+.contacts-content
+  h1
+    font-family pro
+    font-size 48px
+    color #000
+    margin-bottom 20px
+    font-weight 400
+    @media(max-width:600px)
+      font-size 36px
+  
+  .address
+    font-family tre
+    font-size 18px
+    color #7f7f7f
+    margin-bottom 20px
+  
+  .contacts-table
+    width 100%
+    margin 0 -10px 30px
+    td
+      padding 15px 10px
+      font-family tre
+      font-size 14px
+      line-height 1.2em
+      color #000
+      @media(max-width:600px)
+        display block
+        padding 10px
+      span
+      a
+        font-size 18px
+        text-decoration none
+        color usualRed
+      &.val
+       width 45%   
+       @media(max-width:600px)
+        width 100%
+        margin-bottom 20px
+          
+.vacancy-list
+  font-size 0px
+  letter-spacing 0px
+  margin 0 -10px
+  
+  .vac-item
+    display inline-block
+    vertical-align top
+    padding 0 10px
+    width 50%
+    box-sizing border-box
+    margin-bottom 20px
+    
+    @media(max-width:550px)
+      width 100%  
+    
+    .vac-item__inner
+      background #fff
+      display block
+      text-decoration none
+      border 1px solid #ececec
+      padding 1px 
+      &:hover
+        border 1px solid redHover
+    
+    .vac-item__img
+      height 147px
+      background-size cover
+      background-position center center  
+    .vac-item__content
+      padding 10px
+      height 100px
+      .caption
+        font-family 'PTSansPro', sans-serif
+        font-size 20px
+        color #010101
+        margin-bottom 10px
+        display block
+        text-decoration none
+        &:hover
+          color redHover
+          
+          
+      
+      .descr
+        font-size 11px
+        color #7f7f7f
+        height 84px
+        font-style normal
+        span
+          color redColor
+    
+    .vac-social
+      padding 0 10px 10px
+      a
+        display inline-block
+        width 14px
+        height 15px
+        background-image url('../images/icons-sprite.png')
+        margin 0 2px
+        position relative
+        z-index 20
+        &.vk
+          background-position -90px 0
+        &.fb
+          background-position -104px 0
+        &.twi
+          background-position -118px 0    
+        &.lj
+          background-position -132px 0 
+
+.news-side-list
+  margin-bottom 20px
+  h1
+    font-family pro
+    font-size 38px
+    margin-bottom 15px
+    color usualRed
+    font-weight normal
+  .news-item
+    display block
+    padding 10px
+    text-decoration none
+    border-bottom 1px solid #ececec
+    .date
+      font-family tre
+      font-size 10px
+      margin-bottom 10px
+      color usualRed
+    .caption 
+      font-family pro
+      font-size 20px
+      color #010101
+      margin-bottom 10px
+    
+    .news-content
+      font-family tre
+      font-size 11px
+      color #7f7f7f
+      span
+        color usualRed
+    
+     &:hover
+      background #ececec
+      .caption
+        color redHover    
+.cns-wrap
+  margin-bottom 20px
+  @media(max-width:849px)
+    display none
+.content-news-slide
+  display none
+  &.active
+    display block  
+  
+  .cns-img
+    margin-bottom 15px
+    position relative
+    display block
+    text-decoration none
+    img
+      display block
+      width 100%
+    .cns-img-descr
+      background rgba(0,0,0,0.5)
+      color #fff
+      padding 10px 10px 10px 100px
+      text-align right
+      position absolute
+      bottom 0px
+      left 0px
+      width 100%
+      box-sizing border-box
+      font-family tre
+      font-size 10px
+      .views
+        position absolute
+        left 10px
+        top 10px
+        padding-left 30px
+        font-size 10px
+        font-family tre
+        color #ececec
+        &:before
+          content ''
+          width 23px
+          height 13px
+          display inline-block
+          background url('../images/views-ico-white.png')
+          position: absolute;
+          left 0
+          top 50%
+          margin-top -7px
+
+  .cns-date
+    font-family tre
+    font-size 10px
+    margin-bottom 10px
+    color usualRed
+  
+  .cns-caption
+    font-size 38px
+    font-family pro
+    color #010101
+    margin-bottom 10px
+    line-height 1em
+    text-decoration none
+    display block
+    &:hover
+      color redHover
+  
+  .cns-descr
+    font-family tre
+    font-size 14px
+    color #7f7f7f
+    span
+      color usualRed
+
+.rnb-wrap
+  font-size 0px
+  letter-spacing 0px
+  margin 0 -10px
+
+.rnb-item
+  display inline-block
+  vertical-align top
+  padding 0 10px
+  margin-bottom 20px
+  width 50%
+  @media(max-width:550px)
+    width 100%
+    
+      
+  
+.rnb-item__inner
+  display block
+  text-decoration none
+  border 1px solid #ececec
+  padding 1px
+  animate(0.2s)
+  text-decoration none !important
+  
+  &:hover
+    border-color redHover
+  
+  .rnb-item__img
+    height 190px
+    background-size cover
+  
+  .rnb-item__content
+    padding 15px
+    position relative
+    
+    .rnb__count
+    .rnb__author  
+      font-size 10px
+      color #c1272d
+      margin-bottom 10px
+      font-family tre
+      &.rnb__bottom
+        margin-bottom 0
+        margin-top 10px
+    
+    .rnb__author
+      padding-right 50px  
+      
+    .rnb__caption
+      font-family pro
+      font-size 20px
+      color #010101
+      height 46px
+      line-height 1.1em 
+      margin-bottom 10px    
+    
+    .rnb-descr
+      height 40px  
+      font-family tre
+      font-size 11px
+      color #7f7f7f
+      overflow hidden
+      span
+        color usualRed
+      
+      
+.news-head-img
+  margin 0 -15px
+  img
+    display block
+    width 100%          
+             
+.news-img-descr
+  font-family tre
+  font-size 10px
+  color #7f7f7f
+  margin-bottom 20px   
+
+.news-inner-date
+  font-size 10px
+  font-family tre
+  color usualRed
+  margin-bottom 10px                   
+  
+        
+  
+  
+
+
+// helpers
+
+.no-padding-top
+  padding-top 0px
+
+.navigation-wrap
+  padding 20px 0
+  ul
+    padding 0 30px
+    text-align center
+    position relative
+    min-height 30px
+    font-size 0px
+    display block
+  
+  .num
+    display inline-block 
+    font-family tre
+    color #c1272d
+    line-height 22px
+    font-size 14px
+    padding 0 5px
+    a
+      color #c1272d
+      text-decoration none
+      animate(0.2s)
+      &:hover
+        color redHover
+  
+    &.active
+      a
+        color #7f7f7f      
+     
+  
+  .prev
+  .next
+    display inline-block
+    position absolute
+    top 0px 
+    a
+      display inline-block
+      background-image url('../images/nav-arrows.png') 
+      width  16px
+      height 22px 
+      filter grayscale(100%)
+      opacity 0.3
+      animate(0.2s)
+      &:hover
+        opacity 1
+        filter grayscale(0%) 
+      
+  
+  .prev
+    left 0px 
+    a 
+      background-position 0 0
+  
+  .next
+    right 0px
+    a
+      background-position -16px 0  
+
+.inline-row
+  font-size 0px
+  letter-spacing 0px   
+  .inline-col
+    display inline-block
+    float none   
+    vertical-align top
+    
+    h2
+      font-size 32px
+      font-family pro
+      color #7f7f7f
+      font-weight normal
+      margin-bottom 30px
+
+.form-wrap
+  .form
+    font-family tre
+    font-size 14px
+  
+  .form-header
+    font-family pro
+    font-size 26px
+    color usualRed
+    margin-bottom 20px
+      
+    
+  .input-wrap
+    margin-bottom 10px
+    font-size 14px
+    position relative
+    .label
+      display block
+      font-size 14px
+      font-weight 500
+      color usualRed
+      margin-bottom 10px
+      
+    .input-txt
+      border 1px solid #ececec
+      padding 0 15px
+      height 40px
+      color #000
+      width 100%
+      box-sizing border-box
+      color #000
+      margin-bottom 10px
+      &.route-txt
+        margin-right 100px
+        width calc(100% - 100px)
+        display inline-block
+      &.txt-area
+        height 95px
+        resize none
+        padding 10px
+      &.small
+        width 28px 
+        padding 0
+        text-align center
+        display inline-block
+        vertical-align middle
+        margin-right 7px
+        &+span
+          display inline-block
+          vertical-align middle
+          font-size 14px
+          color #7f7f7f
+          margin-bottom 10px
+      &.datepicker
+        background url('../images/datepicker.png')   right 10px center no-repeat 
+        padding-right 40px   
+        max-width 300px         
+    .add-route
+      display inline-block
+      max-width 80px
+      position absolute 
+      right 25px
+      bottom 25px
+      color usualRed
+      font-size 10px
+      cursor: pointer;
+      text-transform uppercase
+    .select-wrap
+      display inline-block
+      position relative
+      width 100%
+      &:after
+        content ''
+        position absolute
+        height 38px
+        width 38px
+        top: 1px
+        right 1px
+        background #fff url('../images/select-arrow.png') center center no-repeat
+        pointer-events none
+        
+    .select
+      height 40px
+      box-sizing border-box
+      padding 0 38px 0 15px 
+      border 1px solid #ececec
+      font-size 14px
+      width 100%
+      margin-bottom 10px
+      &.route-select
+        max-width 100%
+  
+  .routes-list
+    font-size 14px
+    
+    .routes-item
+      margin-bottom 10px
+      position relative
+    
+    .route-item__txt
+      border 0px
+      margin-right 40px
+      font-size 14px
+      color #010101
+      padding 10px
+      background #ececec
+    
+    .route-delete
+      width 30px
+      height 30px
+      background url('../images/remove-ico.png') center center no-repeat
+      position absolute
+      right 0
+      top 50%
+      margin-top -15px
+      cursor pointer
+      
+  .submit-wrap
+    margin-bottom 20px
+  
+  .input-submit
+    font-family pro
+    font-size 24px
+    line-height 40px
+    width 190px
+    color #fff
+    background #c1272d
+    border 0px 
+    animate(0.2s)
+    &:hover
+      background-color #a7252a
+  
+  .file-wrap
+    margin-bottom 20px
+    .file-descr
+      font-size 10px
+      color #7f7f7f
+      line-height 1.2em
+    
+    .file-input
+      margin-bottom 10px  
+      input
+        display none
+      
+      .file-label
+        padding-left 30px
+        min-height 20px
+        position relative
+        font-size 12px
+        color #7f7f7f
+        cursor pointer
+        &:before
+          content ''
+          position absolute
+          left 0
+          top -5px
+          background url('../images/file-bg.png') center center no-repeat
+          display inline-block
+          width 20px
+          height 20px
+    
+    .addfile
+      font-size 12px
+      color #c1272d
+      padding-left 30px
+      position relative
+      cursor pointer
+      margin-bottom 20px
+      &:before
+        content ''
+        width 11px
+        height 11px
+        background url('../images/addfilebg.png')
+        position absolute
+        left 8px
+        top 0px
+      
+            
+            
+        
+                    
+                    
+  
+  .dp-wrap
+    padding-left 25px
+    position relative
+    span
+      display inline-block
+      position absolute
+      left: 0;
+      top 11px      
+  
+  .check-wrap
+    white-space nowrap
+    margin-bottom 10px
+    input
+      display none
+    
+    .check-box
+      width 19px
+      height 19px
+      border 1px solid #ededed
+      cursor: pointer
+      display inline-block
+      vertical-align middle
+      position: relative
+      &:after
+        content ''
+        display inline-block
+        width 7px
+        height 7px
+        background #c1272d
+        position absolute
+        top 5px
+        left 5px
+        opacity 0
+    
+    input:checked + .check-box:after
+      opacity 1   
+        
+        
+    
+    .check-text
+      font-size 10px
+      color #7f7f7f
+      line-height 10px
+      display inline-block
+      vertical-align middle
+    &.store-check
+      margin-bottom 15px
+      .check-box
+        width 9px
+        height 9px
+        top 1px
+        &:after
+          top 0px
+          left 0px 
+      .check-text
+        font-family 'PT Sans', sans-serif
+        font-size 14px
+        line-height 14px 
+  
+  .radio-wrap
+    white-space nowrap
+    margin-bottom 10px
+    input
+      display none
+    
+    .radio-box
+      width 19px
+      height 19px
+      border 1px solid #ededed
+      cursor: pointer
+      display inline-block
+      vertical-align middle
+      position: relative
+      border-radius 50%
+      &:after
+        content ''
+        display inline-block
+        width 7px
+        height 7px
+        background #c1272d
+        position absolute
+        top 5px
+        left 5px
+        opacity 0
+        border-radius 50%
+    
+    input:checked + .radio-box:after
+      opacity 1   
+        
+        
+    
+    .radio-text
+      font-size 10px
+      color #7f7f7f
+      line-height 10px
+      display inline-block
+      vertical-align middle 
+    
+    &.store-radio
+      margin-bottom 15px
+      .radio-box
+        width 9px
+        height 9px
+        position relative
+        top 1px
+        &:after
+          top 0px
+          left 0px 
+      .radio-text
+        font-family 'PT Sans', sans-serif
+        font-size 14px
+        line-height 14px             
+    
+  .file-input
+    .filename
+      display inline-block
+      padding-left 
+      
+.faq-header
+  font-family pro
+  font-size 30px
+  margin 0 0 30px
+  color usualRed
+  font-weight normal
+           
+    
+.faq-list
+  padding-top 20px
+  
+  .faq-item
+    border-top 1px solid #ececec
+    padding 20px 0  
+    font-family tre
+    font-size 14px
+    
+    .quest
+      color #7f7f7f
+      margin-bottom 20px
+    
+    .answer
+      color #000000
+        
+      
+.side-price
+  font-family tre
+  font-size 14px
+  color #010101
+  p
+    color usualRed
+    margin-bottom 10px
+  
+  ul
+    font-size 10px 
+    margin-bottom 30px
+    li
+      margin-bottom 5px
+      &:before
+        content '• '            
+
+.price-caption
+  background  #ececec
+  font-family tre
+  font-size 0px
+  .pc-item
+    display inline-block
+    vertical-align middle
+    color #000
+    font-size 14px
+    padding 10px
+    &.left
+      width 60%
+      box-sizing border-box
+      padding-left 40px
+    &.right 
+      width 40%
+      box-sizing border-box
+      border-left 2px solid #fff  
+      font-size 0px
+      text-align center
+      div
+      span
+        font-size 14px
+      div
+        margin-bottom 10px
+      span
+        width 50%
+        display inline-block 
+        position relative
+        i
+          font-style normal
+          color usualRed
+        &:last-child:before
+          position absolute
+          content '|' 
+          left 0px
+          top 0px
+    @media(max-width:530px)
+      &.left  
+        text-align center 
+        width 100%
+        padding 15px 15px 25px
+      &.right
+        width 100%   
+
+.price-wrap
+  padding-bottom 30px
+
+.price-table
+  margin-bottom 30px
+
+.price-item
+  margin-bottom 10px
+  .price-top
+    font-size 14px
+    color usualRed
+    text-transform uppercase
+    padding 10px 40px
+    position relative
+    cursor pointer
+    display inline-block
+    &:hover
+      text-decoration underline
+    &:before
+      content ''
+      width 9px
+      height 15px
+      contain('../images/accord-ico.png');
+      position absolute
+      left: 5px;
+      top 50%
+      transform translateY(-50%)
+      animate(0.2s)
+    
+    &.active
+      &:before
+        transform translateY(-50%) rotate(90deg)
+          
+
+      
+  
+  .price-bottom
+    border-bottom 1px solid #c1272d
+    display none
+      
+  
+  .pb-item
+    display block
+    text-decoration none
+    font-size 0px
+    margin 10px 0 30px
+    .pb-item__left
+      width 60%
+      display inline-block
+      vertical-align top
+      padding 0 40px
+      box-sizing border-box
+      p
+        font-size 14px
+        color #7f7f7f
+        text-transform uppercase
+        margin-bottom 5px
+      span
+        font-size 12px
+        color #000   
+      
+      @media(max-width:530px) 
+        width 100%
+        padding 15px 15px 25px  
+    .pb-item__right                           
+      width 40%          
+      display inline-block
+      vertical-align top
+      text-align center
+      span
+        width 50%
+        display inline-block 
+        position relative
+        font-size 14px
+        color #7f7f7f
+      @media(max-width:530px) 
+        width 100%    
+    
+    &:hover
+      .pb-item__left p
+      .pb-item__right  span
+        color usualRed  
+
+.price-notes
+  font-size 10px
+  color #000
+  span
+    color usualRed   
+  
+  p
+    margin-bottom 20px       
+
+.route-descr
+  h3
+    font-family pro 
+    font-size 20px
+    margin-bottom 5px
+    color usualRed
+    font-weight normal
+    text-transform uppercase
+  
+  p
+    font-family tre
+    font-size 14px
+    line-height 1.2em
+    color #7f7f7f
+    margin-bottom 30px
+    span
+      color usualRed
+  
+  ul
+    margin-bottom 30px
+    color #7f7f7f 
+    font-family tre
+    font-size 14px
+    li
+      margin-bottom 15px
+      &:before
+        content '• '
+  
+  .rd__note
+    font-family tre
+    font-size 10px
+    color #000
+    margin-bottom 30px
+    span
+      color usualRed 
+
+.route-map
+  @media(max-width:900px)
+    display none
+
+.routemap__container
+  position relative
+  .imghide
+    opacity 0
+    max-width none
+
+.routemap__wrap
+  text-align center
+  overflow hidden
+  display inline-block
+  position absolute
+  top 0
+  left 50%
+  transform translateX(-50%)
+  
+  .map-mark
+    position absolute
+    z-index 5
+    width 18px
+    height 18px
+    border-radius 50%
+    background #fff 
+    color #000
+    font-size 10px
+    line-height 18px
+    text-align center
+    cursor pointer
+    animate(0.2s)
+    &:hover
+    &.active
+      background  usualRed
+      color #fff 
+      
+  
+  img
+    max-width none
+
+.route-item
+  border 1px solid #ececec  
+  box-sizing border-box
+  padding 10px   
+  display none
+  
+  .route-item__img
+    height 170px
+    background-size cover
+    background-repeat no-repeat
+    margin-bottom 10px
+  
+  .route-item__caption
+    font-size 24px
+    color usualRed
+    margin-bottom 10px
+    font-family pro
+  
+  .route-item__descr
+    font-family tre
+    font-size 14px
+    color #000
+
+.routepoint-list
+  margin 0 -10px
+  padding 20px 0
+  font-size 0px
+  
+  .routepoint
+    padding 0 10px
+    display inline-block
+    vertical-align top
+    
+  .routepoint-item
+    padding 5px 0
+    margin-bottom 10px
+    padding-left 30px
+    position relative
+    font-size 10px
+    font-family tre
+    color #000
+    cursor pointer
+   
+    .num
+      width 18px
+      height 18px
+      border-radius 50%
+      background #b2b2b2 
+      color #000
+      font-size 10px
+      line-height 18px
+      text-align center
+      position absolute
+      left:  0
+      top 50%
+      margin-top -9px
+      animate(0.2s)
+    &:hover
+    &.active  
+      .num
+        background usualRed
+        color #fff   
+               
+.weather-container
+  padding 30px 0 10px
+  
+.weather-wrap
+  margin-bottom 20px     
+
+.wserv-list
+  margin-bottom 20px
+  h2
+    font-family pro
+    font-size 24px
+    color usualRed
+    margin 0 0 20px  
+    font-weight normal
+   
+  .wserv-item
+    margin-bottom 20px
+    a
+      display inline-block
+         
+
+.store-block
+  background #fff
+  margin 0 -20px
+  padding 0 20px
+      
+.store-header
+  background #c1272d
+  padding 15px 15px 10px
+  text-align: justify;
+  line-height: 0;
+  text-justify: newspaper;
+  zoom: 1;
+  text-align-last: justify;
+  margin 0 -20px
+  &:after 
+    content: "";
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    visibility: hidden;
+    height: 0px;
+  
+  .store-login
+  .store-menu
+  .store-cart
+    font-size 14px
+    line-height 1.2em
+    color #fff
+    display inline-block
+    vertical-align middle
+  
+  .store-menu
+    font-size 0px
+    @media(max-width:720px)
+      width 100%
+      text-align center
+      text-align-last center
+    .store-menu__item 
+    .store-menu__div
+      font-size 14px
+      line-height 1.2em
+      color #fff   
+      display inline-block
+      @media(max-width:720px)
+        margin 0 10px 10px
+      a
+        color #fff
+        position relative
+        z-index 10
+    
+    .store-menu__div
+      margin 0 10px  
+      @media(max-width:720px)
+        display none
+  
+  .store-login
+    font-size 0px
+    width 23%
+    text-align-last left
+    text-align left
+    @media(max-width:900px)
+      width auto
+    @media(max-width:720px)
+      width 100%
+      text-align center
+      text-align-last center
+      margin-bottom 10px
+    .login
+    .login-div
+    .reg
+      display inline-block
+      vertical-align middle
+      font-size 14px
+      line-height 1.2em
+      position relative
+      z-index 10 
+      a
+        color #fff
+    
+    .login-div
+      margin 0 10px 
+    
+    .login
+    .reg
+      cursor pointer    
+    
+    .login
+      padding-left 34px
+      &:before
+        content ''
+        width 21px
+        height 20px
+        position absolute
+        left:  0;
+        top 50%
+        margin-top -10px
+        contain('../images/login-ico.png')
+    
+  .store-cart
+    width 23%
+    text-align right
+    text-align-last right
+    @media(max-width:900px)
+      width auto
+    @media(max-width:720px)
+      width 100%
+      text-align center
+      text-align-last center
+    .cart-inner
+      display inline-block
+      padding-right 30px
+      color #fff
+      text-decoration none
+      position relative
+      span
+        display inline-block
+        padding 0 4px
+        font-weight bold
+      &:after
+        content ''
+        width 23px
+        height 21px
+        position absolute
+        right:  0;
+        top 50%
+        margin-top -10px
+        contain('../images/cart-ico.png')
+
+.store-slider__wrap
+  margin 0 -20px
+
+.store-slider__item
+  position relative
+  height 450px
+  @media(max-width:800px)
+    height 300px
+
+.store-slider
+  .slick-dots
+    padding 0
+    position absolute
+    pointer-events none 
+    bottom 10px 
+    button
+      height 10px
+      width 10px
+      box-sizing border-box
+      border 1px solid #fff
+      background #fff
+      pointer-events auto
+      &:hover
+      &:focus  
+        background #fff
+    
+    .slick-active
+      button
+        background #c1272d  
+  
+  .slide-content
+    position absolute
+    bottom 0
+    left 0
+    width 100%
+    box-sizing border-box
+    padding 15px 35px 30px
+    background rgba(0,0,0,0.4)
+    @media(max-width:600px)
+      padding 15px 15px 30px
+    
+      
+      
+    .slide-caption
+      font-family: 'PTSansPro', sans-serif;
+      font-size 70px
+      color #fff
+      margin-bottom 10px
+      @media(max-width:800px)
+        font-size 48px
+    
+    .slide-description
+      font-size 17px
+      color #fff
+      font-weight bold
+      font-style italic
+      line-height 1.3em
+        
+      
+  img
+    display block
+    height 100%  
+    width auto
+    max-width none     
+
+.main-store-wrap
+  padding 20px 0 0
+  margin-bottom 20px
+  
+  h1
+    font-family pro
+    color #000000
+    font-size 48px
+    font-weight normal
+    margin 0 0 20px
+    @media(max-width:600px)
+      font-size 36px
+
+  .red-head
+
+    .side-menu__header
+      background usualRed
+      color #fff
+      padding 0 10px
+      line-height 60px
+      height 60px
+    .side-menu__list
+      padding-top 0px
+
+.store-search
+  position relative
+  border 1px solid #ececec 
+  box-sizing border-box
+  margin-bottom 20px
+  @media(max-width:859px)
+    margin-bottom 30px
+  .search-text
+    height 59px
+    width 100%
+    box-sizing border-box
+    border 0pc  
+    font-family tre
+    font-size 18px
+    color #010101
+    padding 10px 60px 10px 20px 
+  
+  .search-button
+    height 60px
+    width 60px
+    background #fff
+    cursor pointer 
+    background url('../images/search-ico.png') center center no-repeat
+    border 0px
+    position absolute
+    right 1px
+    top 1px
+
+.store-route
+  height 201px
+  background-size cover
+  border 1px solid #ececec
+  box-shadow inset 0px 0px 0px 1px #fff
+  display block
+  text-decoration none
+  margin-bottom 20px
+  position relative
+  padding 1px
+  overflow hidden
+  animate(0.2s)
+  .sr-title
+    position absolute
+    width 100%
+    width calc(100% - 2px)
+    left 1px
+    bottom 1px  
+    box-sizing border-box
+    padding 10px
+    background rgba(0,0,0,0.5)
+    color #fff
+    font-family pro
+    font-size 30px
+    strong
+    b 
+      font-weight bold
+  &:hover
+    border 1px solid usualRed     
+
+.store-wide
+  .store-wide__item
+    background-size cover
+    background-position center center
+    border 1px solid #ececec
+    box-shadow inset 0px 0px 0px 1px #fff
+    display block
+    text-decoration none  
+    margin-bottom 20px
+    overflow hidden
+    animate(0.2s)
+    height 285px
+    position relative
+    strong
+    b 
+      font-weight bold
+    &:hover
+      border 1px solid usualRed
+  
+  .store-wide__content
+    font-family pro
+    font-size 38px
+    position absolute
+    top 55px
+    max-width 100%
+    box-sizing border-box
+    padding 25px
+    display inline-block
+    color #fff
+    @media(max-width:800px)
+      top 10%
+    b
+    strong
+      font-weight bold
+    &.left
+      left: 0;  
+    &.right
+      right 0
+    
+    .more
+    .price  
+      font-size 25px
+      padding 3px 10px 7px
+      display inline-block
+      color #fff
+      background usualRed
+      margin-top 15px 
+    
+    .price
+      font-size 36px    
+      margin-top 30px
+
+.product-wrap
+  .product-item
+    border 1px solid #ececec
+    padding 1px
+    box-sizing border-box 
+    margin-bottom 20px
+    background #fff
+    animate(0.2s)
+    &:hover
+      border 1px solid usualRed
+    .pi-img
+      height 190px
+      background-size cover
+      background-position center center
+      display block
+    
+    .pi-content
+      padding 15px  
+    
+    .pi-section
+      font-family tre
+      font-size 10px
+      color usualRed
+      margin-bottom 10px
+    
+    .pi-caption  
+      height 50px
+      font-family pro
+      font-size 20px
+      color #000
+      margin-bottom 10px
+      a
+        text-decoration none
+        color #000
+        animate(0.2s)
+        &:hover
+          color usualRed
+    .pi-price  
+      border-top 1px solid #ececec  
+      padding 15px 60px 0 0
+      font-size 36px
+      font-weight bold
+      color usualRed
+      font-family pro
+      position relative
+      
+      .to-cart
+        width 60px
+        height 35px
+        background  usualRed url('../images/cart-ico.png') center center no-repeat 
+        position absolute
+        bottom 0
+        right 0
+        display block
+
+.breadcrumbs
+  padding-top 20px
+  margin-bottom 20px
+  a
+  span 
+    display inline-block
+    vertical-align middle
+    color #010101
+    
+    &.home
+      width 25px
+      height 21px
+      contain('../images/home-ico.png')
+  
+  span
+    margin 0 3px        
+
+.product-bottom
+  padding 0
+  h2
+    font-family pro
+    color usualRed
+    font-size 38px
+    margin 0 0 10px
+    font-weight normal
+    
+.store-category__wrap
+  .sc-item
+    border 1px solid #ececec
+    display block
+    text-decoration none
+    padding 1px
+    margin-bottom 20px
+    animate(0.2s)
+    
+    .sc-img
+      height 225px
+      background-size cover
+    
+    .sc-caption
+      font-size 35px
+      font-family pro
+      color #010101
+      animate(0.2s)
+      padding 15px
+    
+    &:hover
+      border 1px solid usualRed
+      .sc-caption
+        color usualRed
+            
+.index-store 
+  .store-search
+    margin-bottom 20px
+       
+
+.national-logo
+  position relative
+  display inline-block
+  margin-bottom 30px
+  img
+    display block 
+  
+  a
+    display inline-block
+    position absolute
+    bottom 10%
+    left 34.5%     
+    font-size 11px
+    font-family tre
+    color usualRed   
+    
+
+.side-science
+  
+  .science__item
+    margin 0 0px 20px
+    font-size 0px
+    letter-spacing 0px
+    vertical-align middle
+    border 1px solid #ededed
+    display block
+    margin-bottom 10px
+    text-decoration none
+    animate(0.2s)
+    &:hover
+      border 1px solid usualRed
+    
+    .science-img
+      width 50%
+      max-width 140px
+      padding 0
+      display inline-block
+      box-sizing border-box
+      vertical-align middle
+      
+      .science-img__inner
+        height 137px
+        background-size cover
+    
+    .science-caption
+      vertical-align middle
+      width 50%
+      display inline-block
+      padding 0 8px
+      box-sizing border-box
+      .sc-header
+        font-size 24px
+        font-family pro
+        color usualRed
+        margin-bottom 10px
+      
+      .sc-content
+        font-family tre
+        font-size 11px
+        color #7f7f7f  
+  
+  .science-list
+    margin-top 40px
+    ul
+      font-size 12px
+      a
+        color #000
+        text-decoration none
+        animate(0.2s)
+        &:hover
+          color usualRed
+                
+.ps-divider
+  margin 30px 0
+  height 1px
+  background #ececec     
+
+.workers-wrap
+  padding 30px 0
+  .worker-item
+    height 136px
+    margin-bottom 20px
+    font-size 0px
+    .worker-img
+      width 50%
+      background-size cover
+      background-position center center
+      height 136px
+      display inline-block
+      vertical-align bottom
+    
+    .worker-content
+      width 50%
+      padding 0 10px
+      display inline-block
+      vertical-align bottom
+    
+    .w-post
+      font-size 11px
+      color #000
+      
+    
+    .w-name   
+      font-family pro
+      font-size 20px
+      color usualRed
+      margin-top 10px
+      span
+        text-transform uppercase
+
+.sfilter
+  margin-top -20px
+  @media(max-width:849px)
+    margin-top 0px
+  .sfilter-item
+    border-bottom: 1px solid #ececec;
+    .sfilter-item__top
+      display: block;
+      background: #fff;
+      padding: 15px 10px;
+      transition: 0.2s ease-out;
+      font-size: 24px;
+      color: #000;
+      text-decoration: none;
+      font-family pro
+      color usualRed
+      cursor: pointer;
+      position relative
+      &:after
+        content "«"
+        position absolute
+        right 0px
+        top 50%
+        transform translateY(-50%)
+        animate(0.2s)
+      &.active
+        &:after
+          transform translateY(-50%) rotate(-90deg)
+  
+    .sfilter-item__bottom
+      padding 15px  
+      display none
+  
+  .sfilter-clear
+    display: block;
+    background: usualRed
+    padding: 15px 10px;
+    transition: 0.2s ease-out;
+    font-size: 24px;
+    color: #000;
+    text-decoration: none;
+    font-family pro
+    color #fff
+    cursor: pointer;
+    position relative
+  
+  .sfilter__note
+    font-size 14px
+    font-family tre
+    padding 20px 0
+    color #000  
+
+.cart-switcher
+  font-size 0px
+  margin-bottom 20px
+  
+  .cs-item
+  .cs-div  
+    font-size 14px
+    color #0f0f0f
+    display inline-block
+  
+  .cs-div
+    margin 0 10px  
+  
+  .cs-item
+    cursor pointer
+    &.active
+      color usualRed    
+
+.cartlist
+  
+  .cartlist-item
+    border 1px solid #ececec
+    font-size 0px
+    letter-spacing 0px
+    box-sizing border-box
+    margin-bottom 20px
+    animate(0.2s)
+    &:hover
+      border 1px solid usualRed
+    
+    .cartlist-content
+      width 70%
+      display inline-block
+      min-height 190px
+      position relative
+      vertical-align middle
+      box-sizing border-box
+      @media(max-width:850px)
+        width 50% 
+        min-height auto
+      
+      @media(max-width:400px)
+        width 100%  
+      
+      .cl-img
+        position absolute
+        display block
+        width 190px
+        height 100%
+        left 0
+        top 0
+        background-size cover
+        background-position center center
+        @media(max-width:850px)
+          display none
+      
+      .cl-descr
+        margin-left 190px
+        padding 10px  
+        @media(max-width:850px)
+          margin-left 0
+        
+        .cl-code
+          font-size 14px
+          margin-bottom 10px
+          color #a2a2a2
+        
+        .cl-caption
+          font-family pro
+          font-size 30px
+          color #000
+          margin-bottom 20px  
+          font-weight bold
+        
+        .cl-prop
+          li
+            font-size 11px
+            color #a2a2a2
+            margin-bottom 5px
+            
+    .cartlist-price
+      width 30%
+      display inline-block
+      vertical-align middle
+      box-sizing border-box
+      padding 10px   
+      
+      @media(max-width:850px)
+        width 50%  
+      
+      @media(max-width:400px)
+        width 100%   
+      
+      span
+        display block
+        font-size 11px
+        color #000
+        margin-bottom 15px
+      
+      .price
+        display none
+      
+      .summary
+        font-family pro
+        font-weight bold
+        color usualRed
+        font-size 38px
+        margin-bottom 15px
+        i
+          font-style normal
+      
+      .count-wrap
+        margin 0 -5px 20px
+        font-size 0px 
+        letter-spacing 0px        
+        .count-minus
+        .count-num
+        .count-plus
+          display inline-block
+          margin 0 5px
+          box-sizing border-box
+          border 1px solid usualRed
+          text-align center
+          background #fff !important
+          color usualRed
+          font-size 14px
+          height 20px
+          vertical-align middle
+        
+        .count-minus
+        .count-plus
+          width 20px   
+          line-height 18px 
+          cursor pointer
+        
+        .count-num
+          width 60px  
+      
+      .delete-item
+        font-size 16px
+        color usualRed
+        text-decoration none
+        cursor pointer
+        display inline-block
+        &:hover
+          color usualRed
+          text-decoration underline
+
+.cart-side
+  @media (max-width:600px) and (min-width:450px)
+    font-size 0px !important
+    letter-spacing 0px        
+    .sidecart-item
+      width 50%
+      font-size 14px
+      display inline-block
+      vertical-align top
+      box-sizing border
+      padding 0 10px 
+
+          
+.cart-social              
+  .csocial-list
+    margin 0 -4px 20px
+    font-size 0px
+    padding-left 35px
+    
+    a
+      display inline-block
+      vertical-align middle
+      width 22px
+      height 23px
+      background-image url('../images/social-big.png')
+      margin 0 4px 10px
+      &.vk
+        background-position 0 0
+      &.fb
+        background-position -22px 0
+      &.twi
+        background-position -44px 0
+      &.lj
+        background-position -66px 0   
+
+.checkout
+  display block
+  padding 10px
+  background usualRed
+  color #fff
+  font-family pro
+  font-size 28px
+  text-decoration none
+  text-align center
+  cursor pointer
+  margin-bottom 20px  
+  &:hover
+    color #fff
+    text-decoration none      
+
+        
+    
+     
+      
+    
+    
+                
+            
+        
+    
+            
+
+          
+                
+    
+      
+
+  
+
+  
+                      
+          
+   
+            
+       
+             
+          
+
+          
+
+        
+        
+              
+        
+    
+      
+   
+
+          
+          
+         
+      
+    
+          
+    
+
+
+
+
+    
+                
+                   
+        
+
+        
+                
+            
+            
+        
+      
+//helpers
+.row
+  margin 0 -10px
+    
+  [class*='col-']
+    padding 0 10px 
+    
+    &.right
+      float right
+
+ 
+.noUi-horizontal
+  height 1px
+  background usualRed
+  box-shadow none
+  border 0px
+  border-radius 0px  
+  margin-bottom 20px  
+  .noUi-handle
+    width 20px
+    height 20px
+    border 0px
+    box-shadow none
+    border-radius 0px 
+    left -10px
+    top -10px
+    cursor pointer !important
+    background transparent
+    z-index 20
+    &:before
+      display none  
+    &:after
+      width 4px
+      height 20px
+      position:  absolute
+      top 0px
+      left 50%
+      margin-left -2px
+      background usualRed
+      pointer-events none
+      
+       
+  
+.input-min
+.input-max
+  display inline-block
+  input
+    height 25px
+    width 45px
+    border 1px solid #ececec 
+    font-size 14px
+    text-align center
+    color #b2b2b2  
+    vertical-align middle
+    display inline-block
+  span
+    display inline-block
+    vertical-align middle  
+
+
+.input-min
+  float left
+
+.input-max
+  float right             
+
+.head-slider
+  margin-bottom 30px
+
+.slider-for
+  @media(max-width:600px)
+    padding 30px
+  .forslider-item
+    text-align center
+    img
+      margin 0 auto
+      
+      @media(max-width:600px)
+        max-height 400px
+  
+  .slick-prev
+  .slick-next
+    width 16px
+    height 22px
+    top: 50%;
+    margin-top -11px
+  
+  .slick-prev
+    background-image url('../images/pslider-left.png')
+  
+  .slick-next
+    background-image url('../images/pslider-right.png')      
+
+.bottom-slider
+  margin-bottom 30px
+  @media(max-width:600px)
+    height 0px
+    overflow hidden
+    margin-bottom 0px
+        
+.slider-nav
+  padding 0 30px
+  .navslider-inner
+    margin 0 5px  
+    padding 1px
+    border 1px solid #ececec
+  
+  .slick-prev
+  .slick-next
+    width 16px
+    height 22px
+    top: 50%;
+    margin-top -11px
+  
+  .slick-prev
+    background-image url('../images/pslider-left.png')
+  
+  .slick-next
+    background-image url('../images/pslider-right.png')    
+
+.product-descr
+  .code
+    font-size 14px
+    color #b3b3b3
+    margin-bottom 10px
+  
+  h1
+    font-size 38px
+    font-family pro
+    color #050505
+    font-weight normal
+    margin-bottom 30px
+  
+  .design
+    font-size 14px
+    color #000
+    
+    span
+      font-size 18px
+      font-weight bold
+      color usualRed
+  
+  .product-price
+    padding-top 30px
+    padding-bottom 10px
+    border-bottom 1px solid #ececec
+    .price-left
+      float left
+      font-family pro
+      font-size 30px
+      color #000
+      line-height 60px
+    
+    .price-right
+      font-family pro
+      font-size 60px
+      color usualRed
+      line-height 60px
+      float right
+  
+  .product-prop
+    padding 20px 0
+    border-bottom 1px solid #ececec
+    .ps-content
+      font-size 14px
+      color #000
+      margin-bottom 10px
+      a
+      span
+        color usualRed
+        text-decoration none
+    
+    .pscheck-list
+      font-size 0px
+      padding 0 -3px
+      .pscheck-wrap
+        display inline-block
+        margin 0 3px
+        input
+          display none        
+        .ps-check
+          cursor pointer
+          display block  
+          min-width 25px
+          height 25px
+          line-height 23px
+          border 1px solid #ececec
+          font-size 14px
+          text-transform uppercase
+          color #b2b2b2
+          padding 0 2px
+          box-sizing border
+          text-align center
+        
+        input:checked + .ps-check
+          border 1px solid usualRed
+          color usualRed           
+    
+.product-add
+  display block
+  text-align center
+  padding 20px 10px
+  max-width 300px
+  font-size 32px
+  color #fff
+  background-color usualRed
+  font-family pro
+  cursor pointer
+  text-decoration none
+  font-weight bold
+  margin 20px 0
+
+.prod-descr
+  margin-bottom 20px
+  li
+    margin-bottom 5px
+    color usualRed
+    font-size 14px
+    
+    span
+      color #000
+        
+        
+
+.pr-content
+  h2
+    font-size 30px  
+    text-transform none      
+
+.product-slider
+  margin-bottom 20px
+ 
+.cart-side
+  font-size 14px
+  color #000
+  span
+    color usualRed
+  
+  .greeting
+    margin-bottom 20px
+    padding-left 35px
+  
+  .side-header
+    font-family pro
+    font-size 24px
+    color usualRed
+    position relative
+    padding-left 35px
+    margin-bottom 20px
+    &:before
+      content ''
+      display block
+      left 0
+      top 50%
+      transform translateY(-50%)
+      position absolute
+  
+  .data-header:before
+    width 21px
+    height 20px
+    contain('../images/data-ico.png')
+  
+  .social-header:before
+    width 21px
+    height 12px
+    contain('../images/sh-ico.png')
+    
+  
+  .subscr-header:before
+    width 21px
+    height 17px
+    contain('../images/subscr-ico.png')
+
+  .pay-header:before
+    width 21px
+    height 13px
+    contain('../images/pay-ico.png')       
+  
+  .delivery-header:before  
+    width 21px
+    height 14px
+    contain('../images/delivery-ico.png')
+
+.profile-content
+  margin-bottom 20px
+  padding-left 35px
+
+.change-link      
+  font-size 14px
+  color usualRed
+  text-decoration none
+  &:hover
+    color usualRed
+    text-decoration underline
+
+.cl-wrap
+  margin-bottom 20px
+  padding-left 26px  
+
+.profile-check
+  padding-left 23px
+  
+  .check-wrap  
+    .check-text
+      color #000
+     
+    .check-box
+      border 1px solid usualRed
+  
+  .radio-wrap  
+    .radio-text
+      color #000
+     
+    .radio-box
+      border 1px solid usualRed      
+  
+.fancy-form
+  width 400px
+  max-width 90%
+    
+.wide-img
+  max-height 500px
+  overflow hidden        
+    
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #c9c9c9
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #c9c9c9
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #c9c9c9
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #c9c9c9
+}        
+        
+    
+        
+      
+      
+      
+    
+      
+                       
+            
+          
+            
+      
+      
+        
+
+             
+         
+
+ 
+    
+    
+      
+
+      
+        
+        
+          
+          
+            
+    
+      
+      
+  
+
+  
+  
+  
+
+
+    
+      
+        
+      
+          
+     
+
+
+ 
+    
+          
+  
+
+  
+
+  
+      
+            
+      
+  
+    
+
+  
+
+ 
+        
+    
+    
+    
+     
+        
+           
+          
+    
+    
+    
+   
+                      
+        
+        
+      
+        
+                 
+            
+         
+  
+  
+
+

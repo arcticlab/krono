@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'PTSansPro-CondBold';
+  src: url('PTSansPro-CondBold.eot?#iefix') format('embedded-opentype'),  url('PTSansPro-CondBold.otf')  format('opentype'),
+	     url('PTSansPro-CondBold.woff') format('woff'), url('PTSansPro-CondBold.ttf')  format('truetype'), url('PTSansPro-CondBold.svg#PTSansPro-CondBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

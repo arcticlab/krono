@@ -1,0 +1,1 @@
+<img src="/bitrix/templates/.default/images/caption.jpg" alt="">

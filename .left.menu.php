@@ -1,0 +1,32 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Камчатка", 
+		"/otkroy-kamchatku/kamchatka/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Территории", 
+		"/otkroy-kamchatku/territorii/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Мультимедиа", 
+		"/otkroy-kamchatku/multimedia/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Достопримечательности", 
+		"/otkroy-kamchatku/dostoprimechatelnosti/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>
