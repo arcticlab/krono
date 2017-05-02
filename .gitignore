@@ -1,0 +1,7 @@
+/upload
+/bitrix
+
+*.bak
+*.map
+*.txt
+.idea
